@@ -1,6 +1,8 @@
 import mongoose from "mongoose";
 import ENV from '../config.js'
-const DB = `mongodb+srv://${ENV.MONGO_USER}:${ENV.MONGO_PASS}@cluster0.pkemegp.mongodb.net/Teer_db?retryWrites=true&w=majority&appName=Cluster0`
+import 'dotenv/config'
+
+const DB = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASS}@cluster0.pkemegp.mongodb.net/Teer_db?retryWrites=true&w=majority&appName=Cluster0`
 
 const connect = async () => {
     const database = await mongoose.connect(DB, {
