@@ -10,28 +10,26 @@ const Common = () => {
                 <h1>Common Numbers</h1>
                 <h1 style={{ fontWeight: "lighter", fontSize: "30px" }}>(Date: {formattedDate})</h1>
             </div>
-            <div className='grid_container'>
-                <div className="item">#</div>
-                <div className="item">Direct</div>
-                <div className="item">House</div>
-                <div className="item">Ending</div>
+            <div className='contC'>
+                <div className="i backi">#</div>
+                <div className="i backi">Direct</div>
+                <div className="i backi">House</div>
+                <div className="i backi">Ending</div>
+
+                {
+                    Cdata.map((item) => {
+                        return (
+                            <>
+                                    <div className="i">{item.id}</div>
+                                    <div className="i">{item.Direct.join(',')}</div>
+                                    <div className="i">{item.House}</div>
+                                    <div className="i">{item.Ending}</div>
+                            </>
+                        )
+                    })
+                }
+
             </div>
-
-            {
-                Cdata.map((item) => {
-                    return (
-                        <>
-                            <div className='grid_items'>
-                                <div className="grid_item">{item.id}</div>
-                                <div className="grid_item">{item.Direct.join(',')}</div>
-                                <div className="grid_item">{item.House}</div>
-                                <div className="grid_item">{item.Ending}</div>
-                            </div>
-                        </>
-                    )
-                })
-            }
-
         </div>
     )
 }

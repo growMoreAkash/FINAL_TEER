@@ -10,25 +10,22 @@ const Dream = () => {
                 <h1 style={{ fontWeight: "lighter", fontSize: "30px" }}>(Date: {formattedDate})</h1>
             </div>
 
-            <div style={{ overflowX: 'scroll', padding: "5px 5px", width:"100%"}}>
-                <div className='grid_container1' >
-                    <div className="item">#</div>
-                    <div className="item">Dream</div>
-                    <div className="item">Numbers</div>
-                    <div className="item">House</div>
-                    <div className="item">Ending</div>
-                </div>
+            <div className='cont'>
+                    <div className="i backi">#</div>
+                    <div className="i backi">Dream</div>
+                    <div className="i backi">Numbers</div>
+                    <div className="i backi">House</div>
+                    <div className="i backi">Ending</div>
                 {
                     Ddata.map((item) => {
                         return (
                             <>
-                                <div className='grid_items1'>
-                                    <div className="grid_item">{item.id}</div>
-                                    <div className="grid_item">{item.Dream}</div>
-                                    <div className="grid_item">{item.Numbers.join(',')}</div>
-                                    <div className="grid_item">{item.House.join(',')}</div>
-                                    <div className="grid_item">{item.Ending.join(',')}</div>
-                                </div>
+                                    <div className="i">{item.id}</div>
+                                    <div className="i">{item.Dream}</div>
+                                    <div className="i">{item.Numbers.join(',')}</div>
+                                    <div className="i">{item.House.join(',')}</div>
+                                    <div className="i">{item.Ending.join(',')}</div>
+                                    
                             </>
                         )
                     })

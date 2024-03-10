@@ -289,3 +289,35 @@ select {
     width: 80%;
   }
 }
+
+.cont{
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  padding: 25px 50px;
+  grid-template-columns: repeat(5,1fr);
+  grid-template-rows: repeat(27,1fr);
+  gap: 10px;
+
+}
+.contC{
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  padding: 25px 50px;
+  margin: 30px;
+  grid-template-columns: repeat(4,1fr);
+  grid-template-rows: repeat(50,1fr);
+  gap: 10px;
+
+}
+.i{
+  text-align: center;
+  font-size: 25px;
+}
+
+.backi{
+  background-color: rgb(197, 196, 195);
+  width: 100%;
+  padding: 20px;
+}

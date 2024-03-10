@@ -1,4 +1,4 @@
 export default {
-    USER:"deep",
-    PASS:"1234"
+    USER:"tapashpaul123",
+    PASS:"1133"
 }

@@ -75,18 +75,8 @@ function Navbar() {
               Previous Result
             </NavLink>
           </li>
-          <li>
-            <NavLink
-              to='/login'
-              exact activeClassName="active"
-              className='nav-links-mobile'
-              onClick={closeMobileMenu}
-            >
-              Admin
-            </NavLink>
-          </li>
         </ul>
-        <Button />
+        {/* <Button /> */}
       </nav>
     </>
   );

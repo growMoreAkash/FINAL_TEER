@@ -5,7 +5,7 @@ import 'react-calendar/dist/Calendar.css';
 import { useLogin } from './LoginProvider';
 import { useHistory } from 'react-router-dom'
 import axios from 'axios'
-
+import { BASE_URL } from './Data/helper';
 const Dashboard = () => {
 
     const currentDate = new Date();
@@ -13,11 +13,11 @@ const Dashboard = () => {
     const history = useHistory();
     const { isLogin } = useLogin()
     const alert = useAlert()
-    const [formData, setFormData] = useState({ Date: formattedDate, Timing: "", FR: "", SR: "" })
+    const [formData, setFormData] = useState({ Date: formattedDate, Timing: "Night", FR: "", SR: "" })
     const handleSubmit = (event) => {
         event.preventDefault();
         console.log(formData)
-        axios.post('/api/addPrevious', formData).then((data) => {
+        axios.post(`${BASE_URL}/api/addPrevious`, formData).then((data) => {
             alert.show("Result has been uploaded")
             setFormData({...formData,Timing:"",FR:"",SR:""})
         }).catch(error => {
@@ -43,14 +43,13 @@ const Dashboard = () => {
 
                         <div style={{ display: 'flex', justifyContent: "space-around" }} className='Twoinput'>
 
-                            <div className='input' >
+                            <div className='input'>
                                 <label htmlFor='Timing'>Timing</label>
-                                <select name="Timing" id="" value={formData.Timing}
-                                    onChange={handleChange}>
-                                    <option >SELECT Timing</option>
-                                    <option value="Day">Day</option>
-                                    <option value="Night">Night</option>
-                                </select>
+                                <input
+                                    type="text"
+                                    name='Timing'
+                                    value="Night"
+                                />
                             </div>
                             <div className='input'>
                                 <label htmlFor='Date'>Date</label>

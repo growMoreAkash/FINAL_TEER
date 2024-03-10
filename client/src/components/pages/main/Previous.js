@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { BASE_URL } from './Data/helper';
 
 const Previous = () => {
     const currentDate = new Date();
@@ -9,7 +10,7 @@ const Previous = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get('http://localhost:8000/api/getPrevious');
+                const response = await axios.get(`${BASE_URL}/api/getPrevious`);
                 setFData(response.data); // Update FData with response data
             } catch (error) {
                 console.error('Error fetching data:', error);
@@ -25,24 +26,24 @@ const Previous = () => {
                 <h1>Previous Numbers</h1>
                 <h1 style={{ fontWeight: "lighter", fontSize: "30px" }}>(Date: {formattedDate})</h1>
             </div>
-            <div className='grid_container1'>
-                <div className="item">#</div>
-                <div className="item">Date</div>
-                <div className="item">Timing</div>
-                <div className="item">FR</div>
-                <div className="item">SR</div>
+            <div className='cont'>
+                <div className="i backi">#</div>
+                <div className="i backi">Date</div>
+                <div className="i backi">Timing</div>
+                <div className="i backi">FR</div>
+                <div className="i backi">SR</div>
+                {FData.reverse().map((item, i) => { // Corrected variable name to FData
+                    return (
+                        <>
+                            <div className="i">{i + 1}</div>
+                            <div className="i">{item.Date}</div>
+                            <div className="i">{item.Timing}</div>
+                            <div className="i">{item.FR}</div>
+                            <div className="i">{item.SR}</div>
+                        </>
+                    )
+                })}
             </div>
-            {FData.reverse().map((item, i) => { // Corrected variable name to FData
-                return (
-                    <div className='grid_items1' key={item.id}>
-                        <div className="grid_item">{i + 1}</div>
-                        <div className="grid_item">{item.Date}</div>
-                        <div className="grid_item">{item.Timing}</div>
-                        <div className="grid_item">{item.FR}</div>
-                        <div className="grid_item">{item.SR}</div>
-                    </div>
-                )
-            })}
         </div>
     )
 }
