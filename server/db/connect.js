@@ -1,5 +1,4 @@
 import mongoose from "mongoose";
-import ENV from '../config.js'
 import 'dotenv/config'
 
 const DB = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASS}@cluster0.pkemegp.mongodb.net/Teer_db?retryWrites=true&w=majority&appName=Cluster0`
